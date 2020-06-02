@@ -10,5 +10,5 @@ Write a function called reverseArray which takes an array as an argument. Withou
 Iterate over the list appending values to the new list before returning it O(n) time
 
 ## Solution
-![img](./code_chall1.png)
+![img](./code_chall_1.png)
 
