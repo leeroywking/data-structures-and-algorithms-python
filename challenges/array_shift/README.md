@@ -1,4 +1,4 @@
-# Reverse an Array
+# Shift a value into an Array
 Lee-Roy King and Richard Whitehead
 
 
