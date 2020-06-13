@@ -17,6 +17,7 @@ Insertions with O(1) by moving pointers only at the head of the LL
 includes at O(n) by iterating once through data
 
 ## API
-linklist.insert(val: int)
-linklist.includes(val:int)
-
+LinkedList()
+LinkedList.insert(val: int)
+LinkedList.includes(val:int)
+Node(val:int)
