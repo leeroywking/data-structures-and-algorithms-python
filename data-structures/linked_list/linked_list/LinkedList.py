@@ -74,18 +74,22 @@ class LinkedList:
         """
         adds a new node to the ll before the 'val' node
         """
-        try:
-            current = self.head
-            while current.next_ != None:
-                if current.next_.val == val:
-                    break
+        current = self.head
+        last = None
+        if self.head.val == val:
+            newNode = Node(newVal, self.head)
+            self.head = newNode
+            return
+            
+        while current != None:
+            if current.val == val:
+                newNode = Node(newVal, current)
+                last.next_ = newNode
+                return
+            else:
+                last = current
                 current = current.next_
-            newNode = Node(newVal, current.next_)
-            current.next_ = newNode
-            self.length += 1
-            return "Success"
-        except: 
-            raise KeyError
+        raise KeyError
 
 
     def insert_after(self, val: int, newVal: int):

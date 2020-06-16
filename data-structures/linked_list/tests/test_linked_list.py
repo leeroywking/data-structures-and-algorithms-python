@@ -115,11 +115,30 @@ def test_ll_insert_before2():
         assert ll.insert_before(0, 5)
 
 
-# def test_ll_insert_before3():
-#     ll = LinkedList()
-#     ll.append(5)
-#     ll.insert_before(5,10)
-#     assert ll == [10,5]
+def test_ll_insert_before3():
+    ll = LinkedList()
+    ll.append(5)
+    ll.insert_before(5, 10)
+    assert str(ll) == "{ 10 } -> { 5 } -> NULL"
+
+
+def test_ll_insert_before4():
+    ll = LinkedList()
+    ll.append(5)
+    ll.append(3)
+    ll.append(1)
+    ll.insert_before(5, 10)
+    assert str(ll) == "{ 10 } -> { 5 } -> { 3 } -> { 1 } -> NULL"
+
+
+def test_ll_insert_before5():
+    ll = LinkedList()
+    ll.append(5)
+    ll.append(3)
+    ll.append(1)
+    with pytest.raises(Exception):
+        ll.insert_before(7, 10)
+
 
 
 def test_insert_after1():
@@ -159,3 +178,11 @@ def test_kth_from_end4():
     ll = LinkedList()
     with pytest.raises(Exception):
         assert ll.kth_from_end(5)
+
+def test_full_linked_list_deep_equality():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    ll1.append(0)
+    ll1.insert(1)
+    ll2.insert(0)
+    assert ll1.head.next_.val == ll2.head.val
