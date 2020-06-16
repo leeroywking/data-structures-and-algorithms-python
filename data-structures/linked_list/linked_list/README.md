@@ -21,3 +21,18 @@ LinkedList()
 LinkedList.insert(val: int)
 LinkedList.includes(val:int)
 Node(val:int)
+
+---------------------------------------------------------
+linked list insert
+
+- [X] Top-level README “Table of Contents” is updated
+ - [X] Feature tasks for this challenge are completed
+ - [X] Unit tests written and passing
+     - [X] “Happy Path” - Expected outcome
+     - [X] Expected failure
+     - [X] Edge Case (if applicable/obvious)
+ - [X] README for this challenge is complete
+     - [X] Summary, Description, Approach & Efficiency, Solution
+     - [X] Link to code
+     - [X] Picture of whiteboard [Picture](./whiteboards/linkedlistinsert.png)
+

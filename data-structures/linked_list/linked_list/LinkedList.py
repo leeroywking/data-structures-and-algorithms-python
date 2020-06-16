@@ -8,6 +8,7 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
+        self.length = 0
 
     def __repr__(self):
         """
@@ -43,6 +44,7 @@ class LinkedList:
         else:
             newNode = Node(val, self.head)
             self.head = newNode
+        self.length +=1
 
     def includes(self, val: int):
         """
@@ -54,3 +56,49 @@ class LinkedList:
                 return True
             current = current.next_
         return False
+
+    def append(self, val: int):
+        """
+        adds a new node to the linked list at the end of the list
+        """
+        if self.head == None:
+            self.head = Node(val)
+        else:
+            current = self.head
+            while current.next_ != None:
+                current = current.next_
+            current.next_ = Node(val)
+        self.length += 1
+
+    def insert_before(self, val: int, newVal: int):
+        """
+        adds a new node to the ll before the 'val' node
+        """
+        try:
+            current = self.head
+            while current.next_ != None:
+                if current.next_.val == val:
+                    break
+                current = current.next_
+            newNode = Node(newVal, current.next_)
+            current.next_ = newNode
+            self.length += 1
+            return "Success"
+        except: 
+            raise KeyError
+
+
+    def insert_after(self, val: int, newVal: int):
+        """
+        adds a new node to the ll after the 'val' node
+        """
+        current = self.head
+        while current != None:
+            if current.val == val:
+                newNode = Node(newVal, current.next_)
+                current.next_ = newNode
+                self.length += 1
+                return "Success"
+            current = current.next_
+        raise KeyError
+
