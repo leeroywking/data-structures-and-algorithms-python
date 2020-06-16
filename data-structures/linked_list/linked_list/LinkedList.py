@@ -102,3 +102,12 @@ class LinkedList:
             current = current.next_
         raise KeyError
 
+    def kth_from_end(self, k):
+        kth_from_start = self.length - k
+        if kth_from_start  > self.length:
+            raise KeyError
+        else:
+            current = self.head
+            for i in range(kth_from_start):
+                current = current.next_
+            return current.val
