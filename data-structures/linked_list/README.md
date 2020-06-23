@@ -52,3 +52,20 @@ Kth_from_end
   - [x] Summary, Description, Approach & Efficiency, Solution
   - [x] Link to code
   - [x] Picture of whiteboard [Picture](./whiteboards/ll-kth_from_end.png)
+
+
+
+
+-------------------------
+# Challenge Summary
+Merge 2 linked lists
+
+## Challenge Description
+Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+
+## Approach & Efficiency
+The key to my approach would be storing the next of current in a holder variable
+
+## Solution
+![img](./linked_list/whiteboards/mergelist.png)
