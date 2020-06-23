@@ -39,10 +39,10 @@ class LinkedList:
         """
         insert takes an integetr
         """
-     
+
         newNode = Node(val, self.head)
         self.head = newNode
-        self.length +=1
+        self.length += 1
 
     def includes(self, val: int):
         """
@@ -78,7 +78,7 @@ class LinkedList:
             newNode = Node(newVal, self.head)
             self.head = newNode
             return
-            
+
         while current != None:
             if current.val == val:
                 newNode = Node(newVal, current)
@@ -88,7 +88,6 @@ class LinkedList:
                 last = current
                 current = current.next_
         raise KeyError
-
 
     def insert_after(self, val: int, newVal: int):
         """
@@ -106,10 +105,31 @@ class LinkedList:
 
     def kth_from_end(self, k):
         kth_from_start = self.length - k
-        if kth_from_start  > self.length:
+        if kth_from_start > self.length:
             raise KeyError
         else:
             current = self.head
             for i in range(kth_from_start):
                 current = current.next_
             return current.val
+
+    @staticmethod
+    def merge_lls(ll1, ll2):
+        current1 = ll1.head
+        current2 = ll2.head
+        while current1.next_ and current2.next_:
+            holder = current1.next_
+            holder2 = current2.next_
+            current1.next_ = current2
+            current2.next_ = holder
+            current1 = holder
+            current2 = holder2
+        
+        if not current2.next_:
+            holder = current1.next_
+            current1.next_ = current2
+            current2.next_ = holder
+        else:
+            current1.next_ = current2
+            
+        return ll1
