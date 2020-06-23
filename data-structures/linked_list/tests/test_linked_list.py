@@ -140,7 +140,6 @@ def test_ll_insert_before5():
         ll.insert_before(7, 10)
 
 
-
 def test_insert_after1():
     ll = LinkedList()
     ll.insert(0)
@@ -179,6 +178,7 @@ def test_kth_from_end4():
     with pytest.raises(Exception):
         assert ll.kth_from_end(5)
 
+
 def test_full_linked_list_deep_equality():
     ll1 = LinkedList()
     ll2 = LinkedList()
@@ -186,6 +186,7 @@ def test_full_linked_list_deep_equality():
     ll1.insert(1)
     ll2.insert(0)
     assert ll1.head.next_.val == ll2.head.val
+
 
 def test_ll_merge1():
     ll1 = LinkedList()
@@ -196,9 +197,12 @@ def test_ll_merge1():
     ll2.append(1)
     ll2.append(3)
     ll2.append(5)
-    mergedLists = LinkedList.merge_lls(ll2,ll1)
-    assert str(mergedLists) == "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> NULL"
+    mergedLists = LinkedList.merge_lls(ll2, ll1)
+    assert (
+        str(mergedLists) == "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> NULL"
+    )
     assert mergedLists.length == 6
+
 
 def test_ll_merge_uneven_long_first():
     ll1 = LinkedList()
@@ -207,9 +211,10 @@ def test_ll_merge_uneven_long_first():
     ll2.append(1)
     ll2.append(3)
     ll2.append(5)
-    mergedLists = LinkedList.merge_lls(ll2,ll1)
+    mergedLists = LinkedList.merge_lls(ll2, ll1)
     assert str(mergedLists) == "{ 1 } -> { 2 } -> { 3 } -> { 5 } -> NULL"
     assert mergedLists.length == 4
+
 
 def test_ll_merge_uneven_long_second():
     ll1 = LinkedList()
@@ -218,6 +223,21 @@ def test_ll_merge_uneven_long_second():
     ll1.append(6)
     ll2 = LinkedList()
     ll2.append(1)
-    mergedLists = LinkedList.merge_lls(ll2,ll1)
+    mergedLists = LinkedList.merge_lls(ll2, ll1)
     assert str(mergedLists) == "{ 1 } -> { 2 } -> { 4 } -> { 6 } -> NULL"
     assert mergedLists.length == 4
+
+
+def test_ll_merge_empty_lists():
+    ll1 = LinkedList()
+    ll2 = LinkedList()
+    mergedLists = LinkedList.merge_lls(ll2, ll1)
+    assert str(mergedLists) == "NULL"
+
+
+def test_ll_merge_one_empty_list():
+    ll1 = LinkedList()
+    ll1.append(0)
+    ll2 = LinkedList()
+    mergedLists = LinkedList.merge_lls(ll2, ll1)
+    assert str(mergedLists) == "{ 0 } -> NULL"

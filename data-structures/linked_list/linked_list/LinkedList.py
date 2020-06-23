@@ -134,6 +134,15 @@ class LinkedList:
         """
         current1 = ll1.head
         current2 = ll2.head
+        print(current1)
+        print(current2)
+        if current1 == None and current2 == None:
+            return ll1
+        if current1 == None:
+            return ll2
+        if current2 == None:
+            return ll1
+
         while current1.next_ and current2.next_:
             holder = current1.next_
             holder2 = current2.next_
