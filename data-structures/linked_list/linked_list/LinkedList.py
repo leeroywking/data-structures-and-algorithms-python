@@ -114,7 +114,16 @@ class LinkedList:
             return current.val
 
     @staticmethod
-    def merge_lls(ll1, ll2):
+    def merge_lls(ll1: LinkedList, ll2: LinkedList) -> LinkedList:
+        """Static method accepts two linked lists and zips the nodes together before returning the zipped list WARNING: this is a mutating function to achieve O(1) space complexity
+
+        Args:
+            ll1 (LinkedList): [first linked list]
+            ll2 (LinkedList): [second linked list]
+
+        Returns:
+            LinkedList: [long linked list]
+        """
         current1 = ll1.head
         current2 = ll2.head
         while current1.next_ and current2.next_:
