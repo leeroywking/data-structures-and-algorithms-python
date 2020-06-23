@@ -39,11 +39,9 @@ class LinkedList:
         """
         insert takes an integetr
         """
-        if self.head == None:
-            self.head = Node(val)
-        else:
-            newNode = Node(val, self.head)
-            self.head = newNode
+     
+        newNode = Node(val, self.head)
+        self.head = newNode
         self.length +=1
 
     def includes(self, val: int):
