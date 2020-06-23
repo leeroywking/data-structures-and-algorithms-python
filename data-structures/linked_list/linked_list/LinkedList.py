@@ -113,8 +113,16 @@ class LinkedList:
                 current = current.next_
             return current.val
 
+    def length_it(self):
+        counter = -0
+        current = self.head
+        while current:
+            current = current.next_
+            counter += 1
+        return counter
+
     @staticmethod
-    def merge_lls(ll1: LinkedList, ll2: LinkedList) -> LinkedList:
+    def merge_lls(ll1: dict, ll2: dict) -> dict:
         """Static method accepts two linked lists and zips the nodes together before returning the zipped list WARNING: this is a mutating function to achieve O(1) space complexity
 
         Args:
@@ -133,12 +141,12 @@ class LinkedList:
             current2.next_ = holder
             current1 = holder
             current2 = holder2
-        
+
         if not current2.next_:
             holder = current1.next_
             current1.next_ = current2
             current2.next_ = holder
         else:
             current1.next_ = current2
-            
+        ll1.length = ll1.length_it()
         return ll1

@@ -198,6 +198,7 @@ def test_ll_merge1():
     ll2.append(5)
     mergedLists = LinkedList.merge_lls(ll2,ll1)
     assert str(mergedLists) == "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> NULL"
+    assert mergedLists.length == 6
 
 def test_ll_merge_uneven_long_first():
     ll1 = LinkedList()
@@ -208,6 +209,7 @@ def test_ll_merge_uneven_long_first():
     ll2.append(5)
     mergedLists = LinkedList.merge_lls(ll2,ll1)
     assert str(mergedLists) == "{ 1 } -> { 2 } -> { 3 } -> { 5 } -> NULL"
+    assert mergedLists.length == 4
 
 def test_ll_merge_uneven_long_second():
     ll1 = LinkedList()
@@ -218,3 +220,4 @@ def test_ll_merge_uneven_long_second():
     ll2.append(1)
     mergedLists = LinkedList.merge_lls(ll2,ll1)
     assert str(mergedLists) == "{ 1 } -> { 2 } -> { 4 } -> { 6 } -> NULL"
+    assert mergedLists.length == 4
