@@ -44,3 +44,63 @@ def test_stack_is_empty():
     assert stack6.is_empty() == True
     stack6.push(5)
     assert stack6.is_empty() == False
+
+
+# ---------------Queues-------------------------------------------------------
+
+
+def test_queue_front():
+    queue1 = Queue()
+    assert queue1.front == None
+
+
+def test_queue_enqueue():
+    queue2 = Queue()
+    queue2.enqueue(0)
+    assert queue2.back.val == 0
+
+
+def test_queue_dequeue():
+    queue3 = Queue()
+    queue3.enqueue(5)
+    assert queue3.dequeue() == 5
+    assert queue3.back == None
+
+
+def test_queue_dequeue_exception():
+    queue4 = Queue()
+    with pytest.raises(Exception) as excep:
+        queue4.dequeue()
+        assert "EmptyQueue" in excep
+
+
+def test_queue_peek():
+    queue5 = Queue()
+    queue5.enqueue(5)
+    assert queue5.peek() == 5
+    assert queue5.back.val == 5
+    assert queue5.front.val == 5
+
+
+def test_queue_peek_exception():
+    queue6 = Queue()
+    with pytest.raises(Exception) as excep:
+        queue6.peek()
+        assert "EmptyQueue" in excep
+
+
+def test_queue_isEmpty():
+    queue7 = Queue()
+    assert queue7.is_empty() == True
+    queue7.enqueue(5)
+    assert queue7.is_empty() == False
+
+def test_stack_str():
+    stack9 = Stack()
+    stack9.push(5)
+    assert str(stack9) == "[5]"
+
+def test_queue_str():
+    queue9 = Queue()
+    queue9.enqueue(5)
+    assert str(queue9) == "[5]"
