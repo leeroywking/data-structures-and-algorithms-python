@@ -104,3 +104,16 @@ def test_queue_str():
     queue9 = Queue()
     queue9.enqueue(5)
     assert str(queue9) == "[5]"
+
+def test_queue_object():
+    queue10 = Queue()
+    obj = {"name":"Steven"}
+    queue10.enqueue(obj)
+    assert queue10.dequeue() == {'name': 'Steven'}
+
+def test_enqueue_dequeue_multiple():
+    queue11 = Queue()
+    queue11.enqueue(1)
+    queue11.enqueue(5)
+    queue11.dequeue()
+    assert queue11.dequeue() == 5

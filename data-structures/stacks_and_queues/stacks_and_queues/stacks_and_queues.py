@@ -70,7 +70,10 @@ class Queue:
             raise StopIteration
 
     def enqueue(self, val):
-        self.back = Node(val, self.back)
+        new_node = Node(val, None)
+        if self.back:
+            self.back.next = new_node
+        self.back = new_node
         if self.front == None:
             self.front = self.back
 
