@@ -38,6 +38,13 @@ Your function should take a string as its only argument, and should return a boo
 | O(n) | O(n) |
 
 
+----
+### Visual
+
+![img](./validbrackets.png)
+
+
+
 ---
 
 ### Change Log
