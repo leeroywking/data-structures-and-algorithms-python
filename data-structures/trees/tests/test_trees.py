@@ -32,7 +32,7 @@ def test_pre_order():
     tree3.add(5)
     tree3.add(1)
     tree3.add(10)
-    assert tree3.preOrder() == [0, 1, 10]
+    assert tree3.preOrder() == [5, 1, 10]
 
 
 def test_post_order():
@@ -50,3 +50,6 @@ def test_in_order():
     tree5.add(10)
     assert tree5.inOrder() == [1, 5, 10]
 
+# def test_debug_test():
+#     tree6 = BinarySearchTree()
+#     tree6.add(0)
