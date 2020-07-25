@@ -9,52 +9,13 @@ class BinaryTree:
         self.root = None
 
     def preOrder(self) -> []:
-        values = []
-        current_node = self.root
-
-        def walk(current_node):
-            left = current_node.left
-            right = current_node.right
-            values.append(current_node.val)
-            if left:
-                walk(left)
-            if right:
-                walk(right)
-
-        walk(current_node)
-        return values
+        return self.anyOrder("pre-order")
 
     def inOrder(self) -> []:
-        values = []
-        current_node = self.root
-
-        def walk(current_node):
-            left = current_node.left
-            right = current_node.right
-            if left:
-                walk(left)
-            values.append(current_node.val)
-            if right:
-                walk(right)
-
-        walk(current_node)
-        return values
+        return self.anyOrder("in-order")
 
     def postOrder(self) -> []:
-        values = []
-        current_node = self.root
-
-        def walk(current_node):
-            left = current_node.left
-            right = current_node.right
-            if left:
-                walk(left)
-            if right:
-                walk(right)
-            values.append(current_node.val)
-
-        walk(current_node)
-        return values
+        return self.anyOrder("post-order")
 
     def anyOrder(self, ordering):
         values = []
@@ -83,7 +44,8 @@ class BinaryTree:
             operations = [add_value, check_left, check_right]
         elif ordering == "in-order":
             operations = [check_left, add_value, check_right]
-
+        else:
+            raise("You need to provide either post-order,pre-order,in-order")
         walk(current_node)
         return values
 
