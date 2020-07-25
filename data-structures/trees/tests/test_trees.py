@@ -50,6 +50,8 @@ def test_in_order():
     tree5.add(10)
     assert tree5.inOrder() == [1, 5, 10]
 
-# def test_debug_test():
-#     tree6 = BinarySearchTree()
-#     tree6.add(0)
+def test_contains_test():
+    tree6 = BinarySearchTree()
+    tree6.add(0)
+    tree6.add(8)
+    assert tree6.contains(8) == True
