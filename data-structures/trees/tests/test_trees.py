@@ -55,3 +55,10 @@ def test_contains_test():
     tree6.add(0)
     tree6.add(8)
     assert tree6.contains(8) == True
+
+def test_anyorder_test():
+    tree7 = BinarySearchTree()
+    tree7.add(1)
+    tree7.add(5)
+    tree7.add(10)
+    tree7.anyOrder("pre-order") == [5, 1, 10]
