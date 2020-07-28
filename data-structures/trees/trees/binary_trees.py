@@ -62,6 +62,19 @@ class BinaryTree:
         walk(self.root)
         return curr_max
 
+    def breadth_first(self):
+        queue = []
+        output = []
+        queue.append(self.root)
+        while queue:
+            current = queue.pop(0)
+            output.append(current.val)
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+        return output
+
 
 class BinarySearchTree(BinaryTree):
     """specific type of binary tree where values are stored right and left according to if they are larger or smaller than the previous node

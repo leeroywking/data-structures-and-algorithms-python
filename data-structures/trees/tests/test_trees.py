@@ -77,3 +77,16 @@ def test_find_maximum_BT():
     tree8.root = root_to_be
     assert tree8.find_maximum_value() == 11
     
+def test_breadth_first_BT():
+    tree9 = BinaryTree()
+    root_to_be = BinaryNode(2)
+    root_to_be.left = BinaryNode(7)
+    root_to_be.right = BinaryNode(5)
+    root_to_be.left.left = BinaryNode(2)
+    root_to_be.left.right = BinaryNode(6)
+    root_to_be.left.right.left = BinaryNode(5)
+    root_to_be.left.right.right = BinaryNode(11)
+    root_to_be.right.right = BinaryNode(9)
+    root_to_be.right.right.left = BinaryNode(4)
+    tree9.root = root_to_be
+    assert tree9.breadth_first() == [2,7,5,2,6,9,5,11,4]
