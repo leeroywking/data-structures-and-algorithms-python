@@ -21,7 +21,7 @@ A python implementation of a Binary search tree with the methods `add` and `cont
 | preOrder | Returns the `BST` as a python list | O(n) | O(1) | tree1.preOrder() |
 | postOrder | Returns the `BST` as a python list | O(n) | O(1) | tree1.postOrder() |
 | inOrder | Returns the `BST` as a python list | O(n) | O(1) | tree1.inOrder() |
-
+| find_maximum_value | returns int representing the highest value int in `BT` | O(n) | O(1) | tree.find_maximum_value()|
 
 ---
 
@@ -37,5 +37,5 @@ The preOrder/postOrder/inOrder methods all return an array of values representin
 ## Change Log
 1.0 Feature complete
 1.1 Implemented anyOrder traversal and switched pre/post/in over to an interface calling anyOrder traversal.
-
+1.1 Implemented find_max_value
 ---

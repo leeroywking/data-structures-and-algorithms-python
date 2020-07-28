@@ -62,3 +62,18 @@ def test_anyorder_test():
     tree7.add(5)
     tree7.add(10)
     tree7.anyOrder("pre-order") == [5, 1, 10]
+
+def test_find_maximum_BT():
+    tree8 = BinaryTree()
+    root_to_be = BinaryNode(2)
+    root_to_be.left = BinaryNode(7)
+    root_to_be.right = BinaryNode(5)
+    root_to_be.left.left = BinaryNode(2)
+    root_to_be.left.right = BinaryNode(6)
+    root_to_be.left.right.left = BinaryNode(5)
+    root_to_be.left.right.right = BinaryNode(11)
+    root_to_be.right.right = BinaryNode(9)
+    root_to_be.right.right.left = BinaryNode(4)
+    tree8.root = root_to_be
+    assert tree8.find_maximum_value() == 11
+    

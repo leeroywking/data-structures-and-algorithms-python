@@ -49,6 +49,19 @@ class BinaryTree:
         walk(current_node)
         return values
 
+    def find_maximum_value(self) -> int:
+        curr_max = self.root.val
+        def walk(node):
+            nonlocal curr_max
+            if node.left:
+                walk(node.left)
+            if node.right:
+                walk(node.right)
+            if node.val > curr_max:
+                curr_max = node.val
+        walk(self.root)
+        return curr_max
+
 
 class BinarySearchTree(BinaryTree):
     """specific type of binary tree where values are stored right and left according to if they are larger or smaller than the previous node
