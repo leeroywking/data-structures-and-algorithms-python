@@ -44,3 +44,28 @@ def test_add_edge_test_size_fall():
     egg = graph.add_vertex("eggs")
     graph.add_edge(spam, egg)
     assert len(graph.adjacency_list) != 3
+
+
+def test_breadth_first_no_loop():
+    graph = Graph()
+    spam = graph.add_vertex("spam")
+    egg = graph.add_vertex("eggs")
+    graph.add_edge(spam, egg, 5)
+    actual = graph.breadth_first(spam)
+    assert actual == [spam,egg]
+
+def test_breadth_first_with_loop():
+    graph = Graph()
+    milk = graph.add_vertex("milk")
+    sugar = graph.add_vertex("sugar")
+    eggs = graph.add_vertex("eggs")
+    flour = graph.add_vertex("flour")
+    graph.add_edge(milk, flour)
+    graph.add_edge(milk, eggs)
+    graph.add_edge(eggs, flour)
+    graph.add_edge(eggs, milk)
+    graph.add_edge(flour, milk)
+    graph.add_edge(flour, eggs)
+    graph.add_edge(flour, sugar)
+    actual = graph.breadth_first(milk)
+    assert actual == [milk,flour, eggs, sugar]
