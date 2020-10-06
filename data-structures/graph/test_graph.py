@@ -69,3 +69,19 @@ def test_breadth_first_with_loop():
     graph.add_edge(flour, sugar)
     actual = graph.breadth_first(milk)
     assert actual == [milk,flour, eggs, sugar]
+
+def test_depth_first_pre_order():
+    graph = Graph()
+    milk = graph.add_vertex("milk")
+    sugar = graph.add_vertex("sugar")
+    eggs = graph.add_vertex("eggs")
+    flour = graph.add_vertex("flour")
+    graph.add_edge(milk, flour)
+    graph.add_edge(milk, eggs)
+    graph.add_edge(eggs, flour)
+    graph.add_edge(eggs, milk)
+    graph.add_edge(flour, milk)
+    graph.add_edge(flour, eggs)
+    graph.add_edge(flour, sugar)
+    actual = graph.depth_first_pre_order(flour)
+    assert actual == [flour, milk, eggs, sugar]
