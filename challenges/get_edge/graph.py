@@ -43,18 +43,10 @@ class Graph:
             walk(first)
 
         return visited_vertex
-        
-    def depth_first_pre_order(self, starting_node):
-        visited_vertex = []
-        def walk(curr_vertex):
-            nonlocal visited_vertex
-            visited_vertex.append(curr_vertex)
-            for edge in self.adjacency_list[curr_vertex]:
-                if (edge.vertex not in visited_vertex):
-                    walk(edge.vertex)
-        walk(starting_node)
-        return visited_vertex
 
+    def depth_first_pre_order(self):
+        pass
+    
 class Vertex:
     def __init__(self, value):
         self.value = value
